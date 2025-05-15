@@ -14,10 +14,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-import QtQuick 2.0
-import org.kde.plasma.plasmoid 2.0
+import QtQuick
+import org.kde.plasma.plasmoid
 
-Item {
-    Plasmoid.compactRepresentation: CompactRepresentation {}
-    Plasmoid.fullRepresentation: CompactRepresentation {}
+PlasmoidItem {
+    id: root
+    
+    // In Plasma 6, we need to import the components from the same directory explicitly
+    Component {
+        id: compactRepComponent
+        CompactRepresentation {}
+    }
+    
+    compactRepresentation: compactRepComponent
+    fullRepresentation: compactRepComponent
 }

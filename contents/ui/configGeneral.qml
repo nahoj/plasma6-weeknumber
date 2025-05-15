@@ -15,9 +15,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.0
-import QtQuick.Controls 1.0 as QtControls
-import QtQuick.Layouts 1.2 as QtLayouts
+import QtQuick
+import QtQuick.Controls as QQC2
+import QtQuick.Layouts
+
+import org.kde.kirigami as Kirigami
 
 Item {
   width: childrenRect.width
@@ -27,23 +29,25 @@ Item {
   property alias cfg_firstWeekOfYearIndex: firstWeekOfYearComboBox.currentIndex
 
   Column {
-    QtLayouts.RowLayout {
-      spacing: 5
-      QtControls.Label {
+    spacing: Kirigami.Units.smallSpacing
+    
+    RowLayout {
+      spacing: Kirigami.Units.smallSpacing
+      QQC2.Label {
         text: i18n("Custom prefix")
       }
-      QtControls.TextField {
+      QQC2.TextField {
         id: customPrefixTextField
         text: "W"
       }
     }
 
-    QtLayouts.RowLayout {
-      spacing: 5
-      QtControls.Label {
+    RowLayout {
+      spacing: Kirigami.Units.smallSpacing
+      QQC2.Label {
         text: i18n("First week of year")
       }
-      QtControls.ComboBox {
+      QQC2.ComboBox {
         id: firstWeekOfYearComboBox
         model: [ "First 4-day week", "Starts on Jan 1st" ]
       }

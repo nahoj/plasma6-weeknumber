@@ -1,0 +1,26 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "anselmolsm@gmail.com",
+                "Name": "Anselmo L. S. Melo"
+            },
+            {
+                "Email": "nahoj+git@crans.org",
+                "Name": "Johan Grande"
+            }
+        ],
+        "Category": "Date and Time",
+        "Description": "A simple plasmoid to show the current week number",
+        "Id": "plasma6-weeknumber",
+        "Name": "Week Number",
+        "Version": "6.0",
+        "License": "GPL 2.0",
+        "Website": "https://github.com/nahoj/plasma6-weeknumber",
+        "BugReportUrl": "https://github.com/nahoj/plasma6-weeknumber/issues"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API": "declarativeappletscript",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-MainScript": "ui/main.qml"
+}

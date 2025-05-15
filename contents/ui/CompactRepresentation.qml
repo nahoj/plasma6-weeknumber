@@ -15,10 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import QtQuick 2.12
-import QtQuick.Layouts 1.1
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import org.kde.plasma.calendar 2.0 as PlasmaCalendar
+import QtQuick
+import QtQuick.Layouts
+import org.kde.plasma.components as PlasmaComponents
+import org.kde.plasma.workspace.calendar as PlasmaCalendar
 
 PlasmaComponents.Label {
   id: label
@@ -48,5 +48,5 @@ PlasmaComponents.Label {
     return week < 10 ? "0" + week : week
   }
 
-  Layout.minimumWidth : 50
+  Layout.minimumWidth: 50
 }
