@@ -22,6 +22,6 @@ ConfigModel {
   ConfigCategory {
     name: i18n("General")
     icon: "preferences-system-time"
-    source: "configGeneral.qml"
+    "configGeneral.qml"
   }
 }

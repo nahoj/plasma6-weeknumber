@@ -36,7 +36,7 @@ PlasmaComponents.Label {
     // Sunday & First 4-day week == ISO-8601, which is followed by Qt
     var week = calendarBackend.currentWeek()
 
-    if (plasmoid.configuration.firstWeekOfYearIndex == 1) {
+    if (plasmoid.configuration.firstWeekOfYearIndex === 1) {
       // Check if January 1st is after Wednesday.
       var date = new Date();
       var janFirst = new Date(date.getFullYear(), 0, 1); // January is 0 in JS
