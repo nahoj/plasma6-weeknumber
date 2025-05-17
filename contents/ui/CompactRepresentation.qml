@@ -28,19 +28,27 @@ PlasmaComponents.Label {
   PlasmaCalendar.Calendar {
     id: calendarBackend
   }
+
+  Timer {
+    interval: 60000  // Update every minute
+    running: true
+    repeat: true
+    onTriggered: label.text = label.prefix + label.currentWeek()
+  }
+
   horizontalAlignment: Text.AlignHCenter
   verticalAlignment: Text.AlignVCenter
-  text: label.prefix + currentWeek()
+  text: label.prefix + label.currentWeek()
 
   function currentWeek() {
     // Sunday & First 4-day week == ISO-8601, which is followed by Qt
-    var week = calendarBackend.currentWeek()
+    let week = calendarBackend.currentWeek();
 
     if (plasmoid.configuration.firstWeekOfYearIndex === 1) {
       // Check if January 1st is after Wednesday.
-      var date = new Date();
-      var janFirst = new Date(date.getFullYear(), 0, 1); // January is 0 in JS
-      var janFirstDayOfWeek = janFirst.getDay();
+      const date = new Date();
+      const janFirst = new Date(date.getFullYear(), 0, 1); // January is 0 in JS
+      const janFirstDayOfWeek = janFirst.getDay();
       // Wednesday == 3, week starting on Sunday
       if (janFirstDayOfWeek > 3)
         week = week + 1;

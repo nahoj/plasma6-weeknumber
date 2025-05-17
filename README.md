@@ -2,7 +2,9 @@
 
 Simple plasmoid to show the current week number.
 
-Based on [plasma-weeknumber](https://github.com/anselmolsm/plasma-weeknumber), ported to Plasma 6.
+Based on [plasma-weeknumber](https://github.com/anselmolsm/plasma-weeknumber) with changes:
+- ported to Plasma 6
+- update the week number when the week changes
 
 Install:
 
