@@ -1,0 +1,28 @@
+version: '3'
+
+vars:
+  # Keep in sync with metadata.json
+  version: '6.0'
+
+tasks:
+  install:
+    desc: Install the plasmoid for the current user
+    cmds:
+      - kpackagetool6 -t Plasma/Applet -i .
+
+  update:
+    desc: Update an already installed plasmoid
+    cmds:
+      - kpackagetool6 -t Plasma/Applet -u .
+
+  remove:
+    desc: Remove the installed plasmoid
+    cmds:
+      - kpackagetool6 -t Plasma/Applet -r plasma6-weeknumber
+
+  package:
+    desc: Create a .plasmoid file
+    cmds:
+      - mkdir -p build
+      - rm -f build/plasma6-weeknumber-v{{.version}}.plasmoid
+      - zip -r build/plasma6-weeknumber-v{{.version}}.plasmoid metadata.json contents/ COPYING README.md Taskfile.yml
